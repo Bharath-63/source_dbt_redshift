@@ -1,5 +1,5 @@
 create  table
-    "dev".public."covid_data__dbt_tmp"
+    "dev"."public"."covid_data__dbt_tmp"
 
 
       compound sortkey(_airbyte_emitted_at)
