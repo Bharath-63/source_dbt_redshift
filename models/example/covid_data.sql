@@ -1,15 +1,27 @@
-create table "dev"."public"."covid_data__dbt_tmp"
-as
-(select
-        cast(json_extract_path_text("_airbyte_data",'key') as varchar) is not NULL as "key",
-        cast(json_extract_path_text("_airbyte_data",'date') as varchar) is not NULL as "date",
-        cast(json_extract_path_text("_airbyte_data",'new_tested') as float) is not NULL as new_tested,
-        cast(json_extract_path_text("_airbyte_data",'new_deceased') as float) is not NULL as new_deceased,
-        cast(json_extract_path_text("_airbyte_data",'total_tested') as float) is not NULL as total_tested,
-        cast(json_extract_path_text("_airbyte_data",'new_confirmed') as float)is not NULL  as new_confirmed,
-        cast(json_extract_path_text("_airbyte_data",'new_recovered') as float) is not NULL as new_recovered,
-        cast(json_extract_path_text("_airbyte_data",'total_deceased') as float) is not NULL as total_deceased,
-        cast(json_extract_path_text("_airbyte_data",'total_confirmed') as float) is not NULL as total_confirmed,
-        cast(json_extract_path_text("_airbyte_data",'total_recovered') as float) is not NULL as total_recovered
-from "dev".public._airbyte_raw_covid_epidemiology as table_alias
- );
+create table IF NOT EXISTS "dev"."public"."covid_data__dbt_tmp"
+(
+bu VARCHAR(100),
+sub_bu VARCHAR(100),
+state VARCHAR(100),
+acc_type VARCHAR(100),
+acc_type_child VARCHAR(100),
+fiscal_year VARCHAR(100),
+month_code VARCHAR(100),
+mtd_actual double precision,
+mtd_budget double precision,
+mtd_prior_year_actual double precision,
+mtd_actual_vs_budget_pct double precision,
+mtd_actual_vs_prior_year_pct double precision,
+ytd_actual double precision,
+ytd_budget double precision,
+ytd_prior_year_actual double precision,
+ytd_actual_vs_budget_pct double precision,
+ytd_actual_vs_prior_year_pct double precision,
+fy_month varchar(100),
+total_budget bigint,
+primekey varchar(100),
+uniqu varchar(100),
+sno bigint,
+sno2 bigint
+
+);
