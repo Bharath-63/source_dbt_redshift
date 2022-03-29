@@ -11,5 +11,5 @@ as
         cast(json_extract_path_text("_airbyte_data",'total_deceased') as float) is not NULL as total_deceased,
         cast(json_extract_path_text("_airbyte_data",'total_confirmed') as float) is not NULL as total_confirmed,
         cast(json_extract_path_text("_airbyte_data",'total_recovered') as float) is not NULL as total_recovered
-from "dev".public._airbyte_raw_covid_data as table_alias
+from "dev".public._airbyte_raw_covid_epidemiology as table_alias
  );
