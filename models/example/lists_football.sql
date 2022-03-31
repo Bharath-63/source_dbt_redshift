@@ -134,4 +134,4 @@ from __dbt__cte__lists_football_ab3
 -- football at lists/football from "dev".public."lists"
 where 1 = 1
 
-  );
+  )
