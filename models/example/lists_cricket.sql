@@ -96,7 +96,7 @@ select
     TOURNAMENT,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    current_timestamp() as _AIRBYTE_NORMALIZED_AT
+    current_timestamp() as _AIRBYTE_NORMALIZED_AT,
     _AIRBYTE_CRICKET_HASHID
 from __dbt__cte__LISTS_CRICKET_AB3
 -- CRICKET at lists/cricket from "DB".PUBLIC."LISTS"
