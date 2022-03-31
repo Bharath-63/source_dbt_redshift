@@ -19,7 +19,7 @@ select
     to_varchar(get_path(parse_json(CRICKET.value), '"tournament"')) as TOURNAMENT,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    current_timestamp() as _AIRBYTE_NORMALIZED_AT
+    current_timestamp as _AIRBYTE_NORMALIZED_AT
 from "DB".PUBLIC."LISTS" as table_alias
 -- CRICKET at lists/cricket
 cross join table(flatten(CRICKET)) as CRICKET
@@ -52,7 +52,7 @@ select
 ) as TOURNAMENT,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    current_timestamp() as _AIRBYTE_NORMALIZED_AT
+    current_timestamp as _AIRBYTE_NORMALIZED_AT
 from __dbt__cte__LISTS_CRICKET_AB1
 -- CRICKET at lists/cricket
 where 1 = 1
@@ -96,7 +96,7 @@ select
     TOURNAMENT,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    current_timestamp() as _AIRBYTE_NORMALIZED_AT,
+    current_timestamp as _AIRBYTE_NORMALIZED_AT,
     _AIRBYTE_CRICKET_HASHID
 from __dbt__cte__LISTS_CRICKET_AB3
 -- CRICKET at lists/cricket from "DB".PUBLIC."LISTS"
