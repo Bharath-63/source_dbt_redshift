@@ -59,4 +59,4 @@ from __dbt__cte__lists_ab3
 -- lists from "dev".public._airbyte_raw_lists
 where 1 = 1
 
-  );
+  )
