@@ -19,7 +19,7 @@ select
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
     current_timestamp as _AIRBYTE_NORMALIZED_AT
-from "DB".PUBLIC."LISTS" as table_alias
+from "dev".PUBLIC."LISTS" as table_alias
 -- FOOTBALL at lists/football
 cross join table(flatten(FOOTBALL)) as FOOTBALL
 where 1 = 1
