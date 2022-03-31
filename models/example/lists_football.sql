@@ -18,7 +18,7 @@ select
     to_varchar(get_path(parse_json(FOOTBALL.value), '"tournament"')) as TOURNAMENT,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    convert_timezone('UTC', current_timestamp()) as _AIRBYTE_NORMALIZED_AT
+    current_timestamp() as _AIRBYTE_NORMALIZED_AT
 from "DB".PUBLIC."LISTS" as table_alias
 -- FOOTBALL at lists/football
 cross join table(flatten(FOOTBALL)) as FOOTBALL
@@ -51,8 +51,8 @@ select
 ) as TOURNAMENT,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    convert_timezone('UTC', current_timestamp()) as _AIRBYTE_NORMALIZED_AT
-from __dbt__cte__LISTS_FOOTBALL_AB1
+    current_timestamp() as _AIRBYTE_NORMALIZED_AT
+    from __dbt__cte__LISTS_FOOTBALL_AB1
 -- FOOTBALL at lists/football
 where 1 = 1
 
@@ -95,7 +95,7 @@ select
     TOURNAMENT,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    convert_timezone('UTC', current_timestamp()) as _AIRBYTE_NORMALIZED_AT,
+    current_timestamp() as _AIRBYTE_NORMALIZED_AT,
     _AIRBYTE_FOOTBALL_HASHID
 from __dbt__cte__LISTS_FOOTBALL_AB3
 -- FOOTBALL at lists/football from "DB".PUBLIC."LISTS"
