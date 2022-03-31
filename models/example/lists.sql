@@ -15,7 +15,7 @@ select
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
     current_timestamp as _AIRBYTE_NORMALIZED_AT
-from "DB".PUBLIC._AIRBYTE_RAW_LISTS as table_alias
+from "dev".PUBLIC._AIRBYTE_RAW_LISTS as table_alias
 -- LISTS
 where 1 = 1
 
