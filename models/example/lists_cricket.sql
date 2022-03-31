@@ -117,4 +117,4 @@ from __dbt__cte__lists_cricket_ab3
 -- cricket at lists/cricket from "dev".public."lists"
 where 1 = 1
 
-  );
+  )
