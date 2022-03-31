@@ -14,7 +14,7 @@ select
     get_path(parse_json(_airbyte_data), '"football"') as FOOTBALL,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    current_timestamp() as _AIRBYTE_NORMALIZED_AT
+    current_timestamp as _AIRBYTE_NORMALIZED_AT
 from "DB".PUBLIC._AIRBYTE_RAW_LISTS as table_alias
 -- LISTS
 where 1 = 1
@@ -29,7 +29,7 @@ select
     FOOTBALL,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-    current_timestamp() as _AIRBYTE_NORMALIZED_AT
+    current_timestamp as _AIRBYTE_NORMALIZED_AT
 
 from __dbt__cte__LISTS_AB1
 -- LISTS
@@ -62,7 +62,7 @@ select
     FOOTBALL,
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
-        current_timestamp() as _AIRBYTE_NORMALIZED_AT,
+        current_timestamp as _AIRBYTE_NORMALIZED_AT,
     _AIRBYTE_LISTS_HASHID
 from __dbt__cte__LISTS_AB3
 -- LISTS from "DB".PUBLIC._AIRBYTE_RAW_LISTS
